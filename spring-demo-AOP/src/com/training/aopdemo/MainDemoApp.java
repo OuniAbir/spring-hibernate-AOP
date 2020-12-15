@@ -18,13 +18,9 @@ public class MainDemoApp {
 
 		
 		//call the business meth
-		theAccountDAO.addAccount();
+		theAccountDAO.addAccount(theAccountDAO, true);
 		theMemberShipDAO.addSillyMember();
-		
-		System.out.println("\n  ****** now call the setter/getter *******");
-		// call the getter/setter
-		theAccountDAO.getServiceName();
-		theMemberShipDAO.getName();
+
 		
 		//close the context
 		context.close(); 

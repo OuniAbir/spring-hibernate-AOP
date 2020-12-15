@@ -34,5 +34,10 @@ public class AccountDAO {
 		
 	}
 	
+	public void addAccount(AccountDAO acountDao, boolean bol)
+	{
+		System.out.println(getClass() + " \n : ADDING MY ACCOUNT");
+		
+	}
 	
 }
