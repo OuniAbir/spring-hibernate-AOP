@@ -21,6 +21,11 @@ public class MainDemoApp {
 		theAccountDAO.addAccount();
 		theMemberShipDAO.addSillyMember();
 		
+		System.out.println(" ****** now call the setter/getter *******");
+		// call the getter/setter
+		theAccountDAO.getServiceName();
+		theMemberShipDAO.getName();
+		
 		//close the context
 		context.close(); 
 	

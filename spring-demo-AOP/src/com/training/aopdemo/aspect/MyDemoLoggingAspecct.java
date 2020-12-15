@@ -42,6 +42,7 @@ public class MyDemoLoggingAspecct {
 	 * @Before("execution(* add*())")
 	 */
 
+	
 	/*
 	 * Make use of PointCut Declarations match on any meth on com.training.aopdemo
 	 * package with any params
@@ -50,8 +51,20 @@ public class MyDemoLoggingAspecct {
 	@Pointcut("execution(* com.training.aopdemo.dao.*.*(..))")
 	public void forDaoPackage() {
 	};
-
-	@Before("forDaoPackage()")
+	
+	// create a pointcut for getter methods
+	@Pointcut("execution(* com.training.aopdemo.dao.*.get*())")
+	public void getter() {};
+	
+	// create pointcut for setter methods
+	@Pointcut("execution(* com.training.aopdemo.dao.*.set*(*))")
+	public void setter() {};
+	
+	// combine pointcut : all package meth.. exclude getter/setter
+	@Pointcut(" forDaoPackage() && !(getter() || setter())")
+	public void forAllPackageNoGetterSetter() {};
+		
+	@Before("forAllPackageNoGetterSetter()")
 	public void beforeaddAccountAdvice() {
 		System.out.println("========> execution @Before advice befor the addAccount meth");
 	}
