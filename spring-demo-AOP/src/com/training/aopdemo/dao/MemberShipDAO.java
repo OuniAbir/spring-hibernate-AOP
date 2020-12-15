@@ -30,7 +30,7 @@ public class MemberShipDAO {
 
 	public void addSillyMember()
 	{
-		System.out.println(getClass() + " : ADDING MY ACCOUNT");
+		System.out.println(getClass() + "  \n  : ADDING MY ACCOUNT");
 		
 	}
 }
